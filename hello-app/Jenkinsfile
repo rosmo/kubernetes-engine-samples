@@ -8,8 +8,7 @@ node {
             source: local('hello-app'),
             request: file('hello-app/cloudbuild.yaml'),
             substitutions: [
-                SHORT_SHA: env.GIT_COMMIT.take(7)
+                SHORT_SHA: "v${env.BUILD_ID}"
             ]
-
     }
 }
