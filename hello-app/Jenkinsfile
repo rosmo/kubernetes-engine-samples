@@ -4,6 +4,6 @@ node {
         googleCloudBuild \
             credentialsId: 'taneli-anthos-sandbox',
             source: local('src'),
-            request: file('hellop-app/cloudbuild.yaml')
+            request: file('hello-app/cloudbuild.yaml')
     }
 }
