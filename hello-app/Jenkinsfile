@@ -5,7 +5,7 @@ node {
 
         googleCloudBuild \
             credentialsId: 'taneli-anthos-sandbox',
-            source: local('hello-app'),
+            source: local('.'),
             request: file('hello-app/cloudbuild.yaml'),
             substitutions: [
                 SHORT_SHA: "v${env.BUILD_ID}"
