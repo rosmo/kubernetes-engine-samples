@@ -1,0 +1,9 @@
+node {
+    stage('Build') {
+ 
+        googleCloudBuild \
+            credentialsId: 'taneli-anthos-sandbox',
+            source: local('src'),
+            request: file('hellop-app/cloudbuild.yaml'),
+    }
+}
