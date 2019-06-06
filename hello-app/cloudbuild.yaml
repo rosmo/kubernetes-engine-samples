@@ -1,7 +1,9 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'eu.gcr.io/taneli-anthos-sandbox/hello-app:$SHORT_SHA', '.']
+  dir: 'hello-app'
   timeout: 500s
 - name: 'gcr.io/cloud-builders/docker'
+  dir: 'hello-app'
   args: ['push', 'eu.gcr.io/taneli-anthos-sandbox/hello-app:$SHORT_SHA']
 images: ['eu.gcr.io/taneli-anthos-sandbox/hello-app:$SHORT_SHA']
