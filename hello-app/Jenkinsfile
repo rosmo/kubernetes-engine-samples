@@ -6,6 +6,10 @@ node {
         googleCloudBuild \
             credentialsId: 'taneli-anthos-sandbox',
             source: local('hello-app'),
-            request: file('hello-app/cloudbuild.yaml')
+            request: file('hello-app/cloudbuild.yaml'),
+            substitutions: [
+                SHORT_SHA: env.GIT_COMMIT.take(7)
+            ]
+
     }
 }
