@@ -1,6 +1,8 @@
 node {
     stage('Build') {
  
+        checkout scm
+
         googleCloudBuild \
             credentialsId: 'taneli-anthos-sandbox',
             source: local('src'),
